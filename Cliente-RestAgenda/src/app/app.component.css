@@ -1,0 +1,157 @@
+
+    #principio{ 
+        color: black;
+    }
+    #arriba{
+    background:  white;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    position: fixed; /*para dejar el menú fijo*/
+    top: 10;
+    width: 100%;
+        
+    }
+    #empieza{
+      font-size: 20px;
+    }
+    #redes{
+        text-align: right;
+    }
+
+/*HEADER*/
+
+header{
+    background-image: url('src\assets\img\Burning_Orange.jpg'), url(src\assets\img\bg-pattern.png);
+    background-repeat: repeat, no-repeat;
+    background-size: auto, cover;
+    background-attachment: fixed;
+    padding: 0;
+    margin: 0;
+    padding-bottom: 50px;
+    padding-top: 100px;
+}
+#entrada{
+    color: white;
+    text-align: left;
+    padding-top:4vw;
+    font-size: 6vh;
+}
+#libro{
+    font-size: 100px;
+    color: white;
+}
+#boton{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-color: white;
+    border-radius: 50px;    /*para dejarlo redondeado*/
+}
+#botonout{
+    text-align: center;
+    padding-top: 15px;
+}
+#movil{
+    color: white;
+    text-align: left;
+    padding-top: 30px;
+    font-size: 50px;
+}
+
+/*MAIN*/
+
+h1{
+    color: black;
+    text-decoration-style: double;
+    padding-top: 30px;
+}
+#buscar{
+    color: black;
+    text-align: right;
+    padding-top: 100px;
+}
+#listado{
+    background-color: RGB(245,208,05);
+    color:wheat;
+    background-position: center;
+}
+table{
+    margin: 1px;
+    background-position: center;
+    text-align: center;
+    color: black;
+    width: 80%;
+    border-bottom: 1px;
+    border-bottom-color: crimson;
+    padding:200px;
+}
+.indice{
+    background-color: crimson;
+}
+
+#nombre{
+    width: 500px;
+    border-right: 5px;
+}
+#telefono{
+    width: 200px;
+}
+#alta{
+    margin-top: 40px;
+    color: black;
+    font-weight: bold;
+    font-size: 20px;
+    border-color: crimson;
+    border-radius: 50px;    /*para dejarlo redondeado*/
+    background: url(src\assets\img\Burning_Orange.jpg);
+    background-size: cover;
+}
+#cabecera{
+    background: url(src\assets\img\Burning_Orange.jpg);
+    background-size: cover;
+    font-weight: bold;
+}
+
+/*ASIDE*/
+
+aside{
+/*background: url(images/bg-cta.jpg);*/
+background-size: cover;
+padding: 0;
+margin: 0;
+padding-top: 200px;
+padding-bottom: 200px;
+font-size: 50px;
+color: black;
+}
+#asides{
+    text-align: left;
+}
+#heart{
+    color: indianred;
+}
+#icons{
+    font-size: 100px;
+}
+#twitter{
+    color: deepskyblue;
+}
+#facebook{
+    color: cornflowerblue;
+}
+#google{
+    color: indianred;
+}
+
+/*FOOTER*/
+
+footer{
+background-color: dimgrey;
+padding: 0;
+margin: 0;
+padding-top: 20px;
+padding-bottom: 5px;
+text-align: center;
+}
