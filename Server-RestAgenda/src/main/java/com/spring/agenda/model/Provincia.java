@@ -3,6 +3,9 @@ package com.spring.agenda.model;
 
 import java.io.Serializable;
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.util.List;
 
 /**
@@ -24,6 +27,7 @@ public class Provincia implements Serializable {
 
 	//bi-directional many-to-one association to Direccion
 	@OneToMany(mappedBy="provincia")
+	@JsonIgnore
 	private List<Direccion> direccions;
 
 	public Provincia() {

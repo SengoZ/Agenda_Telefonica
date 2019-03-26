@@ -3,6 +3,8 @@ package com.spring.agenda.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 /**
  * 
  * @author Grupo 3: Amador Cáceres, Cesar Marcos, Andrés Gomez y Sheila García
@@ -29,6 +31,7 @@ public class Direccion implements Serializable {
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
 	@JoinColumn(name="idpersona")
+	@JsonIgnore
 	private Persona persona;
 
 	//bi-directional many-to-one association to Provincia
@@ -86,5 +89,13 @@ public class Direccion implements Serializable {
 	public void setProvincia(Provincia provincia) {
 		this.provincia = provincia;
 	}
+
+	@Override
+	public String toString() {
+		return "Direccion [iddireccion=" + iddireccion + ", codpostal=" + codpostal + ", direccion=" + direccion
+				+ ", localidad=" + localidad + ", persona=" + persona + ", provincia=" + provincia + "]";
+	}
+	
+	
 
 }
