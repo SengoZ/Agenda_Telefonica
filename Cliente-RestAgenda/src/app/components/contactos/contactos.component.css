@@ -20,7 +20,7 @@
 	
     .form_wrap{
     width: 80%;
-    height: 900px;
+    height: 975px;
     margin: 0px auto;
     display: flex;
 
@@ -56,7 +56,7 @@
     align-items: center;
     justify-content: center;
 
-    background-image: url(src\assets\img\fondo.jpg);
+    background-image: url("src\assets\img\fondo.jpg");
     background-size: cover;
     background-position: center center;
 

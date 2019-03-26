@@ -22,4 +22,10 @@ export class ContactosService {
   public getContactos() {
     return this.http.get<Contactos[]>(this.contactosUrl);
   }
+  public createContactos(contactos) {
+    return this.http.post<Contactos>(this.contactosUrl, contactos);
+  }
+  public fichacontacto(contactos) {
+    return this.http.post<Contactos>(this.contactosUrl, contactos);
+  }
 }
