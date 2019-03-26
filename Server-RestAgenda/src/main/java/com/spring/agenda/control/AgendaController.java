@@ -4,9 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -71,5 +74,28 @@ public class AgendaController {
 		
 		//AÑADIMOS DENTRO DE LA BASE DE DATOS LA PERSONA JUNTO CON LA DIRECCION Y SU PROVINCIA ASOCIADA Y EL TELEFONO
 		servicios.add(pers);
+	}
+	/**
+	 * Método para modificar una persona, la cual la recibimos como un atributo de tipo Persona, junto con su Id y la sobreescribimos.
+	 * @param idpers: id de la persona que estamos modificando.
+	 * @param pers: Atributo tipo Persona con sus atributos modificados.
+	 */
+	@PutMapping(path = {"/{idpersona}"})
+	public void edit(@PathVariable("idpersona") int idpers, @ModelAttribute Persona pers) {
+		/*//Estas dos sentencias son para probar como no machacamos los valores de la persona que recogemos como parámetro, y ver que efectivamente no cambian
+		Persona nueva = servicios.buscarId(idpers);
+		nueva.setNombre(pers.getNombre());
+		*/
+		pers.setIdpersona(idpers);
+		servicios.edit(pers);
+	}
+	
+	/**
+	 * Método para borrar un contactor dado un identificador
+	 * @param idpersona Recibe el parámetro de entrada id de la persona que se eliminará
+	 */
+	@DeleteMapping(path = { "/{idpersona}" })
+	public void delete(@PathVariable("idpersona") int idpersona) {
+		servicios.delete(idpersona);
 	}
 }
