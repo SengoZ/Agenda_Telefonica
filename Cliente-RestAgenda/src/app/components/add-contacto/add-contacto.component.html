@@ -1,3 +1,101 @@
-<p>
-  add-contacto works!
-</p>
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Formulario de contacto</title>
+
+	 <!--bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+  
+
+</head>
+<body >
+	<div id="formulariox">
+    <section class="form_wrap">
+
+        <section class="cantact_info"> 
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>ALTA/MODIFICACIÓN<br>DE CONTACTOS</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> Grupo 3 LucaTic</p>
+                <p><span class="fa fa-mobile"></span> +1(585) 902-8665</p>
+            </section>
+        </section>
+
+        <div class="form_contact">
+			<h2>Alta/Modificación de contactos</h2>
+			<div class="formularioCliente" id="formularioCliente">
+
+				<div class="form">
+					<label for="form" >Nombre</label>
+					<input type="text" class="form-control" id="formGroupExampleInput"  />
+				</div>
+
+				<div class="form">
+					<label for="form" >Primer Apellido</label>
+					<input type="text" class="form-control" id="formGroupExampleInput" />
+				</div>
+
+				<div class="form">
+					<label for="form" >Segundo Apellido</label>
+					<input type="text" class="form-control" id="formGroupExampleInput"  />
+				</div>
+
+				<div class="form">
+					<label for="form" >DNI</label>
+					<input type="text" class="form-control" id="formGroupExampleInput" />
+				</div>
+
+				<div class="form">
+					<label for="form" >Fecha de Nacimiento</label>
+					<input type="text" class="form-control" id="formGroupExampleInput"/>
+				</div>
+			</div>
+
+			<div class="form">
+				<label for="form" >Teléfono</label>
+				<input type="text" class="form-control" id="formGroupExampleInput" />
+			</div>
+
+			<div class="form">
+				<label for="form" >Dirección</label>
+				<input type="text" class="form-control" id="formGroupExampleInput" />
+			</div>
+
+			<div class="form">
+				<label for="form" >Código postal</label>
+				<input type="text" class="form-control" id="formGroupExampleInput" />
+			</div>
+			
+			<div class="form">
+				<label for="form">Localidad</label>
+				<input type="text" class="form-control" id="formGroupExampleInput"  />
+			</div>
+
+			<div class="form">
+				<label for="form" >Provincia</label>
+				<!--<select type="text" class="form-control" id="formGroupExampleInput" name="item" placeholder="${prov.provincia}" path="prov.provincia" items="${listaProv}">
+				</select>-->
+				<select >
+				    <p></p>
+				</select>
+			</div>
+			<div >
+				<a href="/contactos/#listadox"><button type="submit" class="btn btn-primary btn-lg">Enviar</button></a>
+			</div>
+		</div>
+</section>
+</div>
+
+</body>
+</html>
+<router-outlet></router-outlet>

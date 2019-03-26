@@ -23,16 +23,16 @@
                 <span class="fa fa-user-circle"></span>
                 <h2>AGENDA<br>DE CONTACTOS</h2>
             </section>
-            <section class="info_items">
-                <a><button type="button" class="btn btn-outline-info" id="alta" >Nuevo contacto</button></a>
-				     	<div id="buscador">
+            <section class="info_items">		
+						<div id="buscador">
 				     	<form >
 			                <p>
 			                	<i class="fas fa-search" id="lupa"></i>
 			                   <input type="text" name="buscarNombre" placeholder="Buscar por nombre">
 			                </p>
 			            </form>
-			            </div>
+						</div>
+						<a style="margin-left:10px" href="/addcontacto/#formulariox"><button type="button" class="btn btn-outline-info" id="alta" >Nuevo contacto</button></a>
             </section>
        	 </section>
 		    <section class="form_contact" id="scroll">
@@ -57,7 +57,7 @@
 										</td>
 										
 										<td>
-											<a><i class="fas fa-user">Ficha</i></a> | <a id="borrar"><i class="fas fa-trash-alt">Borrar</i></a>
+											<a href="/fichacontacto/#fichax"><i class="fas fa-user" >Ficha</i></a> | <a id="borrar"><i class="fas fa-trash-alt">Borrar</i></a>
 										</td>
 									</tr>
 								</div>
@@ -102,3 +102,6 @@
     </footer>
 </body>
 </html>
+<h1>{{addcontacto}}</h1>
+<h2>{{fichacontacto}}</h2>
+<router-outlet></router-outlet> 

@@ -1,3 +1,103 @@
-<p>
-  ficha-contacto works!
-</p>
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    
+    <title>Formulario de contacto</title>
+
+	 <!--bootstrap-->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+  
+
+</head>
+<body >
+	<div id="fichax">
+    <section class="form_wrap">
+
+        <section class="cantact_info"> 
+            <section class="info_title">
+                <span class="fa fa-user-circle"></span>
+                <h2>ALTA/MODIFICACIÓN<br>DE CONTACTOS</h2>
+            </section>
+            <section class="info_items">
+                <p><span class="fa fa-envelope"></span> Grupo 3 LucaTic</p>
+                <p><span class="fa fa-mobile"></span> +1(585) 902-8665</p>
+            </section>
+        </section>
+
+        <div class="form_contact">
+			<h2>Ficha del contacto</h2>
+			<div class="formularioCliente" id="formularioCliente">
+
+				<div class="form">
+					<label for="form" >Nombre</label>
+					<p></p>
+				</div>
+
+				<div class="form">
+					<label for="form" >Primer Apellido</label>
+					<p></p>
+				</div>
+
+				<div class="form">
+					<label for="form" >Segundo Apellido</label>
+					<p></p>
+				</div>
+
+				<div class="form">
+					<label for="form" >DNI</label>
+					<p></p>
+				</div>
+
+				<div class="form">
+					<label for="form" >Fecha de Nacimiento</label>
+					<p></p>
+				</div>
+			</div>
+
+			<div class="form">
+				<label for="form" >Teléfono</label>
+				<p></p>
+			</div>
+
+			<div class="form">
+				<label for="form" >Dirección</label>
+				<p></p>
+			</div>
+
+			<div class="form">
+				<label for="form" >Código postal</label>
+				<p></p>
+			</div>
+			
+			<div class="form">
+				<label for="form">Localidad</label>
+				<p></p>
+			</div>
+
+			<div class="form">
+				<label for="form" >Provincia</label>
+				<!--<select type="text" class="form-control" id="formGroupExampleInput" name="item" placeholder="${prov.provincia}" path="prov.provincia" items="${listaProv}">
+				</select>-->
+				<select >
+				    <p></p>
+				</select>
+			</div>
+			<div>
+					<a href="/contactos/"> <button type="button" class="btn btn-primary btn-lg">Volver</button></a>
+					<a href="/addcontacto/#formulariox"><button type="button" class="btn btn-primary btn-lg">Editar</button></a>
+			</div>
+		</div>
+</section>
+</div>
+
+</body>
+</html>
+
+<router-outlet></router-outlet>

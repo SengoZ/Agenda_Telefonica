@@ -1,0 +1,191 @@
+
+/*MAIN*/
+#cabecera{
+    background-color: white;
+    background-size: cover;
+}
+#fichax{
+    padding-top: 150px;
+    padding-bottom: 150px;
+}
+#myModal{
+    text-align: center;
+    color: black;
+}
+	#fichax{
+		padding-top: 100px;
+        padding-bottom: 100px;
+        background-color: #f6f7f8;
+	}
+	
+	#lupa{
+		font-size: 50px;
+	}
+	
+    .form_wrap{
+    width: 80%;
+    height: 975px;
+    margin: 0px auto;
+    display: flex;
+
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.2);
+    
+    
+    border-radius: 100px;
+    overflow: hidden;   
+	}
+
+	.cantact_info::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    background-color: RGB(255,145,160);
+    opacity: 0.9;
+	}
+	
+    .cantact_info{
+    width: 25%;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    background-image: url("src\assets\img\fondo.jpg");
+    background-size: cover;
+    background-position: center center;
+
+}
+
+	.info_title,
+	.info_items{
+	    position: relative;
+	    z-index: 2;
+        color: #fff;
+        text-align:center;
+	}
+	
+	.info_title{
+	    margin-bottom: 60px;
+	}
+	
+	.info_title span{
+	    font-size: 100px;
+	    display: block;
+	    text-align: center;
+	    margin-bottom: 15px;
+	}
+	
+	.info_title h2{
+	    font-size: 35px;
+	    text-align: center;
+	}
+	
+	.info_items p{
+	    display: flex;
+	    align-items: center;
+	
+	    font-size: 16px;
+	    font-weight: 600;
+	    margin-bottom: 10px;
+	}
+	
+	.info_items p:nth-child(1) span{
+	    font-size: 30px;
+	    margin-right: 10px;
+	}
+	
+	.info_items p:nth-child(2) span{
+	    font-size: 50px;
+	    margin-right: 15px;
+	    margin-left: 4px;
+	}
+    
+    .form_contact{
+    width: 75%;
+    padding: 30px 40px;
+}
+#scroll{
+    height: 55em;
+    overflow-x: hidden;
+    overflow-y: scroll;
+}
+	.form_contact h2{
+		font-size: 25px;
+		font-weight: 600;
+		color: #303030;
+		margin-bottom: 30px;
+	}
+	
+	.form_contact .user_info{
+	    display: flex;
+	    flex-direction: column;
+	}
+	
+	.form_contact label{
+	    font-weight: 600;
+	}
+	
+	.form_contact input,
+	.form_contact textarea{
+	    width: 100%;
+	    padding: 8px 0px 5px;
+	    margin-bottom: 20px;
+	
+	    border: none;
+	    border-bottom: 2px solid #D1D1D1;
+	
+	    font-family: 'Open sans';
+		color: #5A5A5A;
+		font-size: 14px;
+		font-weight: 400;
+	}
+	
+	.form_contact textarea{
+	    max-width: 100%;
+	    min-width: 100%;
+	    max-height: 90px;
+	}
+	
+	.form_contact input[type="button"]{
+	    width: 180px;
+		background: #4091EC;
+		padding: 10px;
+		border: none;
+		border-radius: 25px;
+	
+	    align-self: flex-end;
+	
+	    color: #fff;
+		font-family: 'Open sans';
+		font-size: 16px;
+		font-weight: 600;
+		cursor: pointer;
+	}
+	
+	.form_contact input[type="button"]:hover{
+	    background: #3371B6;
+	}
+    #alta{
+        background:url(src\assets\img\Burning_Orange.jpg);
+        background-size: cover;
+        margin-top: 40px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-color: crimson;
+        border-radius: 50px;    /*para dejarlo redondeado*/
+    }
+
+
+
+    
