@@ -137,9 +137,15 @@ public class Persona implements Serializable {
 	public void setTelefonos(List<Telefono> telefonos) {
 		this.telefonos = telefonos;
 	}
-
+	
 	/**
 	 * Se realiza el ToString
 	 */
-
+	
+	@Override
+	public String toString() {
+		return "Persona [idpersona=" + idpersona + ", apellido1=" + apellido1 + ", apellido2=" + apellido2 + ", dni="
+				+ dni + ", fechanacimiento=" + fechanacimiento + ", nombre=" + nombre + ", direccions=" + direccions
+				+ ", telefonos=" + telefonos + "]";
+	}
 }

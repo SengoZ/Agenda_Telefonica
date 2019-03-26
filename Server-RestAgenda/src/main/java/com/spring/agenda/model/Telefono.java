@@ -3,6 +3,8 @@ package com.spring.agenda.model;
 import java.io.Serializable;
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 
 /**
  * 
@@ -23,6 +25,7 @@ public class Telefono implements Serializable {
 	//bi-directional many-to-one association to Persona
 	@ManyToOne
 	@JoinColumn(name="idpersona")
+	@JsonIgnore
 	private Persona persona;
 
 	public Telefono() {
@@ -52,4 +55,10 @@ public class Telefono implements Serializable {
 		this.persona = persona;
 	}
 
+	@Override
+	public String toString() {
+		return "Telefono [idtelefono=" + idtelefono + ", telefono=" + telefono + ", persona=" + persona + "]";
+	}
+
+	
 }
