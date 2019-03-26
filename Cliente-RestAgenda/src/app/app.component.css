@@ -23,7 +23,7 @@
 /*HEADER*/
 
 header{
-    background-image: url('src\assets\img\Burning_Orange.jpg'), url(src\assets\img\bg-pattern.png);
+    background-image: url('src\assets\img\Burning_Orange.jpg'), url('src\assets\img\bg-pattern.png');
     background-repeat: repeat, no-repeat;
     background-size: auto, cover;
     background-attachment: fixed;
