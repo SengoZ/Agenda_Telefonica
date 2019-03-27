@@ -48,12 +48,12 @@
 			         	</thead>
 			            <tbody>
 								<div>
-									<tr>
-										<td></td>
-										<td></td>
-										<td></td>
-										<td>
-											<div></div>
+									<tr *ngFor="let contactos of contactos">
+										<td>{{contactos.nombre}}</td>
+										<td>{{contactos.apellido1}}</td>
+										<td>{{contactos.apellido2}}</td>
+										<td> 
+											{{contactos.telefono[0].telefono}}
 										</td>
 										
 										<td>
