@@ -97,7 +97,8 @@ public class AgendaController {
 	 * @param idpersona Recibe el parámetro de entrada id de la persona que se eliminará
 	 */
 	@DeleteMapping(path = { "/{idpersona}" })
-	public void delete(@PathVariable("idpersona") int idpersona) {
+	public void deletecontacto(@PathVariable("idpersona") int idpersona) {
+		System.out.println("********************************************************************************"+idpersona);
 		servicios.delete(idpersona);
 	}
 }
