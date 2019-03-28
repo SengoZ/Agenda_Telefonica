@@ -4,6 +4,21 @@ interface Telefono {
      idpersona: number;
 }
 
+interface Provincia{
+     idprovincia: number;
+     provincia: string;
+}
+
+interface Direccion {
+     iddireccion: number;
+     direccion: string;
+     codpostal: string;
+     localidad: string;
+     idpersona: number;
+     provincia: Provincia;
+  }
+  
+
 export class Contactos {
      idpersona: number;
      nombre: string;
@@ -12,6 +27,7 @@ export class Contactos {
      dni: string;
      fechaNacimiento: Date;
      telefonos: Telefono[];
+     direccions: Direccion;
 }
 
 export interface Contact {
@@ -22,4 +38,7 @@ export interface Contact {
      dni: string;
      fechaNacimiento: Date;
      telefonos: Telefono[];
+     direccions: Direccion;
 }
+
+

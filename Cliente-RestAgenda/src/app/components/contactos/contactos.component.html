@@ -37,29 +37,30 @@
        	 </section>
 		    <section class="form_contact" id="scroll">
 		    	<table class="table">
-			         	<thead id="cabecera">
-				             <tr>
-				                 <th id="nombre">Nombre</th>
-				                 <th id="apellido1">Primer Apellido</th>
-				                 <th id="apellido2">Segundo Apellido</th>
-				                 <th id="teléfono">Telefono</th>
-				                 <th id="acciones">Acciones</th>
-				             </tr>
-			         	</thead>
-			            <tbody>
-								<tr *ngFor="let contacto of contactos | async">
-									<td>{{contacto.nombre}}</td>
-									<td>{{contacto.apellido1}}</td>
-									<td>{{contacto.apellido2}}</td>
-									<td> <tr *ngFor="let telefono of contacto.telefonos">
-										{{telefono.telefono}}
-									</tr> </td>
-									<td>
-										<a href="/fichacontacto/#fichax"><i class="fas fa-user" >Ficha</i></a> | 
-										<button id="borrar" (click)="deletecontacto(contacto); refresh()"><i class="fas fa-trash-alt">Borrar</i></button>
-									</td>
+						<thead id="cabecera">
+								<tr>
+									<th id="nombre">Nombre</th>
+									<th id="apellido1">Primer Apellido</th>
+									<th id="apellido2">Segundo Apellido</th>
+									<th id="teléfono">Telefono</th>
+									<th id="acciones">Acciones</th>
 								</tr>
-						</tbody>
+							</thead>
+							<tbody>
+									<tr *ngFor="let contacto of contactos | async">
+										<td>{{contacto.nombre}}</td>
+										<td>{{contacto.apellido1}}</td>
+										<td>{{contacto.apellido2}}</td>
+										<td> <tr *ngFor="let telefono of contacto.telefonos">
+											{{telefono.telefono}}
+										</tr> </td>
+										<td>
+											<!--<a href="/fichacontacto/#fichax"><i class="fas fa-user" >Ficha</i></a>-->
+											<button class="btn btn-danger" (click)="fichacontacto(contacto)" style="margin-left: 20px;">Ficha</button> | 
+											<button id="borrar" (click)="deletecontacto(contacto); refresh()"><i class="fas fa-trash-alt">Borrar</i></button>
+										</td>
+									</tr>
+							</tbody>
 					</table>
 		    </section>	      
 		 

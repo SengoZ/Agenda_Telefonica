@@ -24,14 +24,6 @@ export class AddContactoComponent implements OnInit {
               private formBuilder: FormBuilder) {
   }
 
-  addContactos(): void {
-    this.contactosService.addContacto(this.contact)
-      .pipe(
-        tap((data) => alert(`Contacto ${data.nombre} generado de forma correcta`))
-      )
-      .subscribe();
-  }
-
   ngOnInit() {
     this.formGroup = this.formBuilder.group({
 
@@ -44,21 +36,5 @@ export class AddContactoComponent implements OnInit {
     });
   }
 
-  public createContact() {
-    const contact: Contactos = {
-      idpersona: 0,
-      nombre: this.formGroup.get('nomb').value,
-      apellido1: this.formGroup.get('ape1').value,
-      apellido2: this.formGroup.get('ape2').value,
-      dni: this.formGroup.get('dni').value,
-      fechaNacimiento: this.formGroup.get('fecha').value,
-      telefonos: [this.formGroup.get('tel').value]
-    };
-    // tslint:disable-next-line:no-unused-expression
-    console.log('heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee');
-    console.log(this.formGroup);
-
-    this.contactosService.addContacto(this.formGroup.value);
-    console.log('ya he salido de servicios colega, ¿ha salido bien?? animo tronco');
-  }
+  
 }
