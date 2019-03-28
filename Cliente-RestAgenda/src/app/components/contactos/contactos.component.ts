@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Contactos } from '../../models/contactos';
 import { ContactosService } from '../../services/contactos.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-contactos',
@@ -10,14 +11,12 @@ import { ContactosService } from '../../services/contactos.service';
 })
 export class ContactosComponent implements OnInit {
 
-  contactos: Contactos[];
+  public contactos: Observable<Contactos[]>;
+
   constructor(private router: Router, private contactosService: ContactosService) {
 
   }
   ngOnInit() {
-    this.contactosService.getContactos()
-    .subscribe( data => {
-      this.contactos = data;
-    });
-};
+    this.contactos = this.contactosService.getContactos();
+  }
 }

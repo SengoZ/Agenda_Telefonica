@@ -47,20 +47,17 @@
 				             </tr>
 			         	</thead>
 			            <tbody>
-								<div>
-									<tr *ngFor="let contactos of contactos">
-										<td>{{contactos.nombre}}</td>
-										<td>{{contactos.apellido1}}</td>
-										<td>{{contactos.apellido2}}</td>
-										<td> 
-											{{contactos.telefono[0].telefono}}
-										</td>
-										
-										<td>
-											<a href="/fichacontacto/#fichax"><i class="fas fa-user" >Ficha</i></a> | <a id="borrar"><i class="fas fa-trash-alt">Borrar</i></a>
-										</td>
-									</tr>
-								</div>
+								<tr *ngFor="let contacto of contactos | async">
+									<td>{{contacto.nombre}}</td>
+									<td>{{contacto.apellido1}}</td>
+									<td>{{contacto.apellido2}}</td>
+									<td>{{contacto.telefonos}}</td>
+									<td *ngFor="let telefono of contacto.telefonos">
+										{{telefono.telefono}}</td>
+									<td>
+										<a href="/fichacontacto/#fichax"><i class="fas fa-user" >Ficha</i></a> | <a id="borrar"><i class="fas fa-trash-alt">Borrar</i></a>
+									</td>
+								</tr>
 						</tbody>
 					</table>
 		    </section>	      
@@ -102,6 +99,6 @@
     </footer>
 </body>
 </html>
-<h1>{{addcontacto}}</h1>
-<h2>{{fichacontacto}}</h2>
+<!-- <h1>{{addcontacto}}</h1>
+<h2>{{fichacontacto}}</h2> -->
 <router-outlet></router-outlet> 
