@@ -46,23 +46,24 @@
 
 				<div class="form">
 					<label for="form" >Primer Apellido</label>
-					<input type="text" class="form-control" id="formGroupExampleInput" />
+					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="ape1"/>
 				</div>
 
 				<div class="form">
 					<label for="form" >Segundo Apellido</label>
-					<input type="text" class="form-control" id="formGroupExampleInput"  />
+					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="ape2" />
 				</div>
 
 				<div class="form">
 					<label for="form" >DNI</label>
-					<input type="text" class="form-control" id="formGroupExampleInput" />
+					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="dni" />
 				</div>
 
 				<div class="form">
 					<label for="form" >Fecha de Nacimiento</label>
-					<input type="date" class="form-control" id="formGroupExampleInput"/>
+					<input type="date" class="form-control" id="formGroupExampleInput" formControlName="fecha"/>
 				</div>
+
 				<button [disabled]="formGroup.invalid" (click)="createContact()" type="submit" class="btn btn-primary btn-lg">Enviar</button>
 
 			</form>

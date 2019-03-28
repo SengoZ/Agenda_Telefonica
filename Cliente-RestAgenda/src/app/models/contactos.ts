@@ -12,7 +12,6 @@ export class Contactos {
      dni: string;
      fechaNacimiento: Date;
      telefonos: Telefono[];
-
 }
 
 export interface Contact {
