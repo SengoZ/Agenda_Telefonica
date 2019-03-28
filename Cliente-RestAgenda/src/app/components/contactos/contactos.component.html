@@ -55,7 +55,8 @@
 										{{telefono.telefono}}
 									</tr> </td>
 									<td>
-										<a href="/fichacontacto/#fichax"><i class="fas fa-user" >Ficha</i></a> | <a id="borrar"><i class="fas fa-trash-alt">Borrar</i></a>
+										<a href="/fichacontacto/#fichax"><i class="fas fa-user" >Ficha</i></a> | 
+										<button id="borrar" (click)="deletecontacto(contacto); refresh()"><i class="fas fa-trash-alt">Borrar</i></button>
 									</td>
 								</tr>
 						</tbody>

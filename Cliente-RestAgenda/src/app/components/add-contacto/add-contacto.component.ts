@@ -33,36 +33,32 @@ export class AddContactoComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.addContactos();
     this.formGroup = this.formBuilder.group({
 
-      nomb: ['', Validators.required],
-      // ape1: ['', Validators.required],
-      // ape2: ['', Validators.required],
-    //  dni: ['', Validators.required],
-     // fecha ['', Validators.required];
-      tel: ['', Validators.required],
+      nomb: ['amador', Validators.required],
+      ape1: ['caceres', Validators.required],
+      ape2: ['rubio', Validators.required],
+      dni: [111, Validators.required],
+      fecha: ['', Validators.required],
+      tel: ['651547466', Validators.required],
     });
-
-
   }
 
   public createContact() {
     const contact: Contactos = {
+      idpersona: 0,
       nombre: this.formGroup.get('nomb').value,
       apellido1: this.formGroup.get('ape1').value,
       apellido2: this.formGroup.get('ape2').value,
-      idpersona: 0,
       dni: this.formGroup.get('dni').value,
       fechaNacimiento: this.formGroup.get('fecha').value,
       telefonos: [this.formGroup.get('tel').value]
     };
+    // tslint:disable-next-line:no-unused-expression
+    console.log('heeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeeee');
+    console.log(this.formGroup);
 
-    // tslint:disable-next-line:no-string-literal
-    // this.formGroup['telefono'] = [this.formGroup.get('telefono').value, '651'] as string[];
-    console.log(this.formGroup.value);
-
-
+    this.contactosService.addContacto(this.formGroup.value);
+    console.log('ya he salido de servicios colega, ¿ha salido bien?? animo tronco');
   }
-
 }
