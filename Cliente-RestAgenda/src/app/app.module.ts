@@ -9,8 +9,9 @@ import { FichaContactoComponent } from './components/ficha-contacto/ficha-contac
 
 
 import { ContactosService } from './services/contactos.service';
-import { HttpClientModule } from "@angular/common/http";
-import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -19,13 +20,15 @@ import { FormsModule } from '@angular/forms';
     ContactosComponent,
     AddContactoComponent,
     FichaContactoComponent
-   
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule  
+    FormsModule,
+    CommonModule,
+    ReactiveFormsModule
   ],
   providers: [ContactosService],
   bootstrap: [AppComponent]

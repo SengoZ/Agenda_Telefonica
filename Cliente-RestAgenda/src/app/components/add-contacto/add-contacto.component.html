@@ -33,11 +33,15 @@
 
         <div class="form_contact">
 			<h2>Alta/Modificación de contactos</h2>
-			<div class="formularioCliente" id="formularioCliente">
+			<form [formGroup]="formGroup" class="formularioCliente" id="formularioCliente">
 
 				<div class="form">
 					<label for="form" >Nombre</label>
-					<input type="text" class="form-control" id="formGroupExampleInput"  />
+					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="name" />
+				</div>
+				<div class="form">
+					<label for="form" >Telefono</label>
+					<input type="number" class="form-control" id="formGroupExampleInput" formControlName="telefono" />
 				</div>
 
 				<div class="form">
@@ -59,7 +63,9 @@
 					<label for="form" >Fecha de Nacimiento</label>
 					<input type="text" class="form-control" id="formGroupExampleInput"/>
 				</div>
-			</div>
+				<button [disabled]="formGroup.invalid" (click)="createContact()" type="submit" class="btn btn-primary btn-lg">Enviar</button>
+
+			</form>
 
 			<div class="form">
 				<label for="form" >Teléfono</label>
