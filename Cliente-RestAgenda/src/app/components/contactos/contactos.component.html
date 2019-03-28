@@ -51,9 +51,9 @@
 									<td>{{contacto.nombre}}</td>
 									<td>{{contacto.apellido1}}</td>
 									<td>{{contacto.apellido2}}</td>
-									<td>{{contacto.telefonos}}</td>
-									<td *ngFor="let telefono of contacto.telefonos">
-										{{telefono.telefono}}</td>
+									<td> <tr *ngFor="let telefono of contacto.telefonos">
+										{{telefono.telefono}}
+									</tr> </td>
 									<td>
 										<a href="/fichacontacto/#fichax"><i class="fas fa-user" >Ficha</i></a> | <a id="borrar"><i class="fas fa-trash-alt">Borrar</i></a>
 									</td>

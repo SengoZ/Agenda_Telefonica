@@ -12,7 +12,6 @@ import { Observable } from 'rxjs';
 export class ContactosComponent implements OnInit {
 
   public contactos: Observable<Contactos[]>;
-
   constructor(private router: Router, private contactosService: ContactosService) {
 
   }
