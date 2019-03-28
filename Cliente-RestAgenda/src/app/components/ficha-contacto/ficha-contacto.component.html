@@ -23,7 +23,7 @@
         <section class="cantact_info"> 
             <section class="info_title">
                 <span class="fa fa-user-circle"></span>
-                <h2>ALTA/MODIFICACIÓN<br>DE CONTACTOS</h2>
+                <h2>FICHA<br>DEL CONTACTO</h2>
             </section>
             <section class="info_items">
                 <p><span class="fa fa-envelope"></span> Grupo 3 LucaTic</p>
@@ -37,57 +37,102 @@
 
 				<div class="form">
 					<label for="form" >Nombre</label>
-					<p></p>
+					<p>{{contacto.nombre}}</p>
 				</div>
 
 				<div class="form">
 					<label for="form" >Primer Apellido</label>
-					<p></p>
+					<p>{{contacto.apellido1}}</p>
 				</div>
 
 				<div class="form">
 					<label for="form" >Segundo Apellido</label>
-					<p></p>
+					<p>{{contacto.apellido2}}</p>
 				</div>
 
 				<div class="form">
 					<label for="form" >DNI</label>
-					<p></p>
+					<p>{{contacto.dni}}</p>
 				</div>
 
 				<div class="form">
 					<label for="form" >Fecha de Nacimiento</label>
-					<p></p>
+					<p>{{ "2016-01-05T09:05:05.035Z" | date }}</p>
 				</div>
 			</div>
 
 			<div class="form">
-				<label for="form" >Teléfono</label>
-				<p></p>
+					<table>
+							<thead for="form">
+								<tr>
+									<th id="nombre">Teléfono</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr *ngFor="let telefono of contacto.telefonos">
+											{{telefono.telefono}}
+									</tr> 
+							</tbody>
+					</table>
+			</div>
+
+			<div class="form"> 
+					<table>
+							<thead for="form">
+								<tr>
+									<th id="nombre">Dirección</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr *ngFor="let dir of contacto.direccions">
+											{{dir.direccion}}
+									</tr> 
+							</tbody>
+					</table>
+			</div>		
+
+			<div class="form">
+					<table>
+							<thead for="form">
+								<tr>
+									<th id="nombre">Código Postal</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr *ngFor="let dir of contacto.direccions">
+											{{dir.codpostal}}
+									</tr> 
+							</tbody>
+					</table>
+			</div>
+			<div class="form">
+					<table>
+							<thead for="form">
+								<tr>
+									<th id="nombre">Localidad</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr *ngFor="let dir of contacto.direccions">
+											{{dir.localidad}}
+									</tr> 
+							</tbody>
+					</table>
 			</div>
 
 			<div class="form">
-				<label for="form" >Dirección</label>
-				<p></p>
-			</div>
-
-			<div class="form">
-				<label for="form" >Código postal</label>
-				<p></p>
-			</div>
-			
-			<div class="form">
-				<label for="form">Localidad</label>
-				<p></p>
-			</div>
-
-			<div class="form">
-				<label for="form" >Provincia</label>
-				<!--<select type="text" class="form-control" id="formGroupExampleInput" name="item" placeholder="${prov.provincia}" path="prov.provincia" items="${listaProv}">
-				</select>-->
-				<select >
-				    <p></p>
-				</select>
+					<table>
+							<thead for="form">
+								<tr>
+									<th id="nombre">Provincia</th>
+								</tr>
+							</thead>
+							<tbody>
+									<tr *ngFor="let dir of contacto.direccions">
+											{{dir.provincia.provincia}}
+									</tr> 
+							</tbody>
+					</table>
 			</div>
 			<div>
 					<a href="/contactos/"> <button type="button" class="btn btn-primary btn-lg">Volver</button></a>
@@ -96,7 +141,6 @@
 		</div>
 </section>
 </div>
-
 </body>
 </html>
 

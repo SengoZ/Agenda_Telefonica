@@ -15,12 +15,17 @@ export class ContactosComponent implements OnInit {
   constructor(private router: Router, private contactosService: ContactosService) {
   }
   deletecontacto(contactos): void {
-    console.log(contactos);
-    this.contactosService.deletecontacto(contactos).subscribe(() => console.log('user deleted'));
+    this.contactosService.deletecontacto(contactos);
   }
+  fichacontacto(contactos): void {
+    localStorage.removeItem("ficha");
+    localStorage.setItem("ficha", JSON.stringify(contactos));
+    this.router.navigate(['fichacontacto']);
+  };
   refresh(): void {
     window.location.reload();
- }
+  }
+
   ngOnInit() {
     this.contactos = this.contactosService.getContactos();
   }

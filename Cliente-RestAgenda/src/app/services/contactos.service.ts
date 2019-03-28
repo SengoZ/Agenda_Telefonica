@@ -35,8 +35,9 @@ export class ContactosService {
   }
   // http://localhost:8080/person/id
   public deletecontacto(contactos) {
-    console.log(contactos.idpersona);
-    console.log((this.contactosUrl + '/' + contactos.idpersona));
     return this.http.delete(this.contactosUrl + '/' + contactos.idpersona);
+  }
+  getUserById(id: number) {
+    return this.http.get<Contactos>(this.contactosUrl + '/' + id);
   }
 }
