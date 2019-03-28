@@ -37,11 +37,11 @@
 
 				<div class="form">
 					<label for="form" >Nombre</label>
-					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="nombre" />
+					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="nomb" />
 				</div>
 				<div class="form">
 					<label for="form" >Telefono</label>
-					<input type="number" class="form-control" id="formGroupExampleInput" formControlName="telefono" />
+					<input type="number" class="form-control" id="formGroupExampleInput" formControlName="tel" />
 				</div>
 
 				<div class="form">
@@ -61,7 +61,7 @@
 
 				<div class="form">
 					<label for="form" >Fecha de Nacimiento</label>
-					<input type="text" class="form-control" id="formGroupExampleInput"/>
+					<input type="date" class="form-control" id="formGroupExampleInput"/>
 				</div>
 				<button [disabled]="formGroup.invalid" (click)="createContact()" type="submit" class="btn btn-primary btn-lg">Enviar</button>
 

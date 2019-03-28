@@ -14,7 +14,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 })
 export class AddContactoComponent implements OnInit {
 
-  contactos: Contactos = new Contactos();
+  contacto: Contactos;
 
   private contact: Contact;
   public formGroup: FormGroup;
@@ -22,39 +22,44 @@ export class AddContactoComponent implements OnInit {
   constructor(private router: Router,
               private contactosService: ContactosService,
               private formBuilder: FormBuilder) {
-
   }
 
-  createContactos(): void {
-    this.contactosService.createContactos(this.contactos)
+  addContactos(): void {
+    this.contactosService.addContacto(this.contact)
       .pipe(
         tap((data) => alert(`Contacto ${data.nombre} generado de forma correcta`))
       )
       .subscribe();
-
   }
 
   ngOnInit() {
-    this.createContactos();
+    this.addContactos();
     this.formGroup = this.formBuilder.group({
 
-      name: ['', Validators.required],
-      telefono: ['', Validators.required]
+      nomb: ['', Validators.required],
+      // ape1: ['', Validators.required],
+      // ape2: ['', Validators.required],
+    //  dni: ['', Validators.required],
+     // fecha ['', Validators.required];
+      tel: ['', Validators.required],
     });
 
 
   }
 
   public createContact() {
-    // const contact: Contact = {
-    //   nombre: this.formGroup.get('name').value,
-    //   apellido1: '',
-    //   apellido2: '',
-    //   idpersona: 0,
-    //   telefonos: []
-    // };
+    const contact: Contactos = {
+      nombre: this.formGroup.get('nomb').value,
+      apellido1: this.formGroup.get('ape1').value,
+      apellido2: this.formGroup.get('ape2').value,
+      idpersona: 0,
+      dni: this.formGroup.get('dni').value,
+      fechaNacimiento: this.formGroup.get('fecha').value,
+      telefonos: [this.formGroup.get('tel').value]
+    };
+
     // tslint:disable-next-line:no-string-literal
-    this.formGroup['telefono'] = [this.formGroup.get('telefono').value, '651'] as string[];
+    // this.formGroup['telefono'] = [this.formGroup.get('telefono').value, '651'] as string[];
     console.log(this.formGroup.value);
 
 

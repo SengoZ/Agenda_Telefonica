@@ -25,8 +25,8 @@ export class ContactosService {
   }
 
   // Con Observable, tipamos el tipo de objeto que va a devolver, diciendo que es un Contacto
-  public addContacto(): Observable<Contactos> {
-    return this.http.post<Contactos>(`${this.contactosUrl}`, Contactos);
+  public addContacto(contacto: Contactos): Observable<Contactos> {
+    return this.http.post<Contactos>(`${this.contactosUrl}`, contacto);
   }
   public fichacontacto(contactos) {
     return this.http.get<Contactos>(`${this.contactosUrl}/${contactos.idpersona}`);

@@ -9,6 +9,8 @@ export class Contactos {
      nombre: string;
      apellido1: string;
      apellido2: string;
+     dni: string;
+     fechaNacimiento: Date;
      telefonos: Telefono[];
 
 }
@@ -18,6 +20,7 @@ export interface Contact {
      nombre: string;
      apellido1: string;
      apellido2: string;
+     dni: string;
+     fechaNacimiento: Date;
      telefonos: Telefono[];
-
 }
