@@ -11,9 +11,12 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.spring.agenda.dao.AgendaProvincias;
+import com.spring.agenda.model.Contactos;
 import com.spring.agenda.model.Direccion;
 import com.spring.agenda.model.Persona;
 import com.spring.agenda.model.Provincia;
@@ -24,6 +27,7 @@ import com.spring.agenda.services.AgendaService;
  * @author Grupo 3: Amador Cáceres, Cesar Marcos, Andrés Gomez y Sheila García
  *
  */
+
 @CrossOrigin(origins = "*", maxAge = 3600)
 @RestController
 @RequestMapping({"/person"})
@@ -51,7 +55,74 @@ public class AgendaController {
 	 * @param prov: Recoge el objeto tipo Json y introduce los atributos correspondientes de Provincia
 	 */
 	@PostMapping
-	public void add(@ModelAttribute Persona pers, @ModelAttribute Telefono tel, @ModelAttribute Direccion dir, @ModelAttribute Provincia prov) {
+	public void add(@RequestBody Contactos contacto) {
+
+		System.out.println("-------------------------------------he entrado a guardar");
+		System.out.println(contacto.toString());
+		servicios.add(especialista(contacto));
+	}
+	/**
+	 * Método para modificar una persona, la cual la recibimos como un atributo de tipo Persona, junto con su Id y la sobreescribimos.
+	 * @param idpers: id de la persona que estamos modificando.
+	 * @param pers: Atributo tipo Persona con sus atributos modificados.
+	 */
+	
+/*	@PostMapping
+	public void add(@ModelAttribute Persona pers) {
+		servicios.add(pers);
+	}
+	*/
+	@PutMapping(path = {"/{idpersona}"})
+	public void edit(@PathVariable("idpersona") int idpers, @ModelAttribute Persona pers) {
+		/*//Estas dos sentencias son para probar como no machacamos los valores de la persona que recogemos como parámetro, y ver que efectivamente no cambian
+		Persona nueva = servicios.buscarId(idpers);
+		nueva.setNombre(pers.getNombre());
+		*/
+		pers.setIdpersona(idpers);
+		servicios.edit(pers);
+	}
+	
+	/**
+	 * Método para borrar un contactor dado un identificador
+	 * @param idpersona Recibe el parámetro de entrada id de la persona que se eliminará
+	 */
+	@DeleteMapping(path = { "/{idpersona}" })
+	public void deletecontacto(@PathVariable("idpersona") int idpersona) {
+		System.out.println("********************************************************************************"+idpersona);
+		servicios.delete(idpersona);
+	}
+	
+	
+	@Autowired
+	private AgendaProvincias provincias;
+	
+	public Persona especialista(Contactos contacto) {
+		
+		Persona pers = new Persona();
+		Direccion dir = new Direccion();
+		Telefono tel = new Telefono();
+		Provincia prov = new Provincia();
+		
+		pers.setNombre(contacto.getNombre());
+		pers.setApellido1(contacto.getApellido1());
+		pers.setApellido2(contacto.getApellido2());
+		pers.setDni(contacto.getDni());
+		pers.setFechanacimiento(contacto.getFechanacimiento());
+		
+		dir.setCodpostal(contacto.getCodPostal());
+		dir.setDireccion(contacto.getDireccion());
+		dir.setLocalidad(contacto.getLocalidad());
+		
+		tel.setTelefono(contacto.getTelefono());
+		
+		for(Provincia i:provincias.findAll()) {
+			if(contacto.getProvincia().equalsIgnoreCase(i.getProvincia())) {
+				prov.setIdprovincia(i.getIdprovincia());
+			}
+		}
+		
+		System.out.println("-------------El id de provincia es: "+prov.getIdprovincia());
+		prov.setProvincia(contacto.getProvincia());
 		
 		//INYECTAMOS DENTRO DEL TELEFONO AÑADIDO LA PERSONA A LA QUE VA A SER AÑADIDA
 		//CREAMOS UNA LISTA, A LA CUAL AÑADIMOS EL TELEFONO Y ESA LISTA LA INYECTAMOS EN PERSONA
@@ -75,30 +146,8 @@ public class AgendaController {
 		pers.setDireccions(listaDirecciones);
 		
 		//AÑADIMOS DENTRO DE LA BASE DE DATOS LA PERSONA JUNTO CON LA DIRECCION Y SU PROVINCIA ASOCIADA Y EL TELEFONO
-		servicios.add(pers);
-	}
-	/**
-	 * Método para modificar una persona, la cual la recibimos como un atributo de tipo Persona, junto con su Id y la sobreescribimos.
-	 * @param idpers: id de la persona que estamos modificando.
-	 * @param pers: Atributo tipo Persona con sus atributos modificados.
-	 */
-	@PutMapping(path = {"/{idpersona}"})
-	public void edit(@PathVariable("idpersona") int idpers, @ModelAttribute Persona pers) {
-		/*//Estas dos sentencias son para probar como no machacamos los valores de la persona que recogemos como parámetro, y ver que efectivamente no cambian
-		Persona nueva = servicios.buscarId(idpers);
-		nueva.setNombre(pers.getNombre());
-		*/
-		pers.setIdpersona(idpers);
-		servicios.edit(pers);
-	}
-	
-	/**
-	 * Método para borrar un contactor dado un identificador
-	 * @param idpersona Recibe el parámetro de entrada id de la persona que se eliminará
-	 */
-	@DeleteMapping(path = { "/{idpersona}" })
-	public void deletecontacto(@PathVariable("idpersona") int idpersona) {
-		System.out.println("********************************************************************************"+idpersona);
-		servicios.delete(idpersona);
+		
+		return pers;
 	}
 }
+	

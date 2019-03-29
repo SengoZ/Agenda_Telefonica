@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Contactos } from '../models/contactos';
 import { Observable } from 'rxjs';
+import { Persona } from '../models/personas';
 
 
 const httpOptions = {
@@ -25,16 +26,18 @@ export class ContactosService {
   }
 
   // Con Observable, tipamos el tipo de objeto que va a devolver, diciendo que es un Contacto
-  public addContacto(contacto: Contactos): Observable<Contactos> {
-    console.log('holaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa');
-    console.log(contacto);
-    return this.http.post<Contactos>(`${this.contactosUrl}`, contacto);
+  public addContacto(persona) {
+    console.log('---------------ESTAMOS DENTRO DEL SERVICIO ADD--------------------');
+    console.log(persona);
+    return this.http.post<Persona>(`${this.contactosUrl}`, persona);
   }
   public fichacontacto(contactos) {
     return this.http.get<Contactos>(`${this.contactosUrl}/${contactos.idpersona}`);
   }
-  // http://localhost:8080/person/id
   public deletecontacto(contactos) {
+    console.log(contactos.idpersona);
+    console.log((this.contactosUrl + '/' + contactos.idpersona));
+ 
     return this.http.delete(this.contactosUrl + '/' + contactos.idpersona);
   }
   getUserById(id: number) {

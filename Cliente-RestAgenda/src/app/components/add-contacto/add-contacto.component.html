@@ -1,106 +1,106 @@
 <!DOCTYPE html>
-<html >
+<html>
 <head>
     <meta charset="UTF-8">
-    
     <title>Formulario de contacto</title>
-
-	 <!--bootstrap-->
+    <!--bootstrap-->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
     <!--FONT AWESOME-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
-
 </head>
-<body >
-	<div id="formulariox">
-    <section class="form_wrap">
-
-        <section class="cantact_info"> 
-            <section class="info_title">
-                <span class="fa fa-user-circle"></span>
-                <h2>ALTA/MODIFICACIÓN<br>DE CONTACTOS</h2>
+<body>
+    <div id="formulariox">
+        <section class="form_wrap">
+            <section class="cantact_info">
+                <section class="info_title">
+                    <span class="fa fa-user-circle"></span>
+                    <h2>ALTA<br>DE CONTACTOS</h2>
+                </section>
+                <section class="info_items">
+                    <p><span class="fa fa-envelope"></span> Grupo 3 LucaTic</p>
+                    <p><span class="fa fa-mobile"></span> +1(585) 902-8665</p>
+                </section>
             </section>
-            <section class="info_items">
-                <p><span class="fa fa-envelope"></span> Grupo 3 LucaTic</p>
-                <p><span class="fa fa-mobile"></span> +1(585) 902-8665</p>
-            </section>
+            <div class="form_contact" style="overflow-y: scroll">
+                <h2>Alta de contactos</h2>
+                <form>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="nombre">Nombre:</label>
+                            <input [(ngModel)]="persona.nombre" placeholder="Nombre" name="nombre"
+                                class="form-control" id="firstName">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="apellido1">Apellido 1:</label>
+                            <input [(ngModel)]="persona.apellido1" placeholder="Apellido 1" name="apellido1"
+                                class="form-control" id="apellido1">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="apellido2">Apellido 2:</label>
+                            <input [(ngModel)]="persona.apellido2" placeholder="Apellido 2" name="apellido2"
+                                class="form-control" id="apellido2">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="dni">DNI:</label>
+                            <input [(ngModel)]="persona.dni" placeholder="DNI" name="dni" class="form-control" id="dni">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="fechanacimiento">Fecha Nacimiento:</label>
+                            <input [(ngModel)]="persona.fechanacimiento" placeholder="aaaa-mm-dd" name="fechanacimiento"
+                                class="form-control" id="fechanacimiento">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="Telefono">Telefono</label>
+                            <input [(ngModel)]="persona.telefono" placeholder="telefonos" name="telefono"
+                                class="form-control" id="firstName">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="direccion">Direccion:</label>
+                            <input [(ngModel)]="persona.direccion" placeholder="Direccion" name="direccion"
+                                class="form-control" id="direccion">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="codPostal">Código Postal:</label>
+                            <input [(ngModel)]="persona.codPostal" placeholder="Código Postal" name="codPostal"
+                                class="form-control" id="codPostal">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="localidad">Localidad:</label>
+                            <input [(ngModel)]="persona.localidad" placeholder="Localidad" name="localidad"
+                                class="form-control" id="localidad">
+                        </div>
+                    </div>
+                    <div class="form">
+                        <div class="form-group">
+                            <label for="provincia">Provincia:</label>
+                            <input [(ngModel)]="persona.provincia" placeholder="Provincia" name="provincia"
+                                class="form-control" id="provincia">
+                        </div>
+                    </div>
+                    <a href="/contactos/#listadox"><button (click)="addContactos()" type="submit" class="btn btn-primary btn-lg">Enviar</button></a>
+                    <a href="/contactos/#listadox"> <button type="button" class="btn btn-primary btn-lg" id="botonVolver">Volver</button></a>
+                </form>
+            </div>
         </section>
-
-        <div class="form_contact">
-			<h2>Alta/Modificación de contactos</h2>
-			<form [formGroup]="formGroup" class="formularioCliente" id="formularioCliente">
-
-				<div class="form">
-					<label for="form" >Nombre</label>
-					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="nomb" />
-				</div>
-				<div class="form">
-					<label for="form" >Telefono</label>
-					<input type="number" class="form-control" id="formGroupExampleInput" formControlName="tel" />
-				</div>
-
-				<div class="form">
-					<label for="form" >Primer Apellido</label>
-					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="ape1"/>
-				</div>
-
-				<div class="form">
-					<label for="form" >Segundo Apellido</label>
-					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="ape2" />
-				</div>
-
-				<div class="form">
-					<label for="form" >DNI</label>
-					<input type="text" class="form-control" id="formGroupExampleInput" formControlName="dni" />
-				</div>
-
-				<div class="form">
-					<label for="form" >Fecha de Nacimiento</label>
-					<input type="date" class="form-control" id="formGroupExampleInput" formControlName="fecha"/>
-				</div>
-
-				<button [disabled]="formGroup.invalid" (click)="createContact()" type="submit" class="btn btn-primary btn-lg">Enviar</button>
-
-			</form>
-
-			<div class="form">
-				<label for="form" >Teléfono</label>
-				<input type="text" class="form-control" id="formGroupExampleInput" />
-			</div>
-
-			<div class="form">
-				<label for="form" >Dirección</label>
-				<input type="text" class="form-control" id="formGroupExampleInput" />
-			</div>
-
-			<div class="form">
-				<label for="form" >Código postal</label>
-				<input type="text" class="form-control" id="formGroupExampleInput" />
-			</div>
-			
-			<div class="form">
-				<label for="form">Localidad</label>
-				<input type="text" class="form-control" id="formGroupExampleInput"  />
-			</div>
-
-			<div class="form">
-				<label for="form" >Provincia</label>
-				<!--<select type="text" class="form-control" id="formGroupExampleInput" name="item" placeholder="${prov.provincia}" path="prov.provincia" items="${listaProv}">
-				</select>-->
-				<select >
-				    <p></p>
-				</select>
-			</div>
-			<div >
-				<a href="/contactos/#listadox"><button type="submit" class="btn btn-primary btn-lg">Enviar</button></a>
-			</div>
-		</div>
-</section>
-</div>
-
+    </div>
 </body>
 </html>
 <router-outlet></router-outlet>
