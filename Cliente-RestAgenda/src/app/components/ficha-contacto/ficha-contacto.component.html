@@ -36,29 +36,30 @@
 			<div class="formularioCliente" id="formularioCliente">
 
 				<div class="form">
-					<label for="form" >Nombre</label>
+					<label for="form" ><b>Nombre</b></label>
 					<p>{{contacto.nombre}}</p>
 				</div>
 
 				<div class="form">
-					<label for="form" >Primer Apellido</label>
+					<label for="form" ><b>Primer Apellido</b></label>
 					<p>{{contacto.apellido1}}</p>
 				</div>
 
 				<div class="form">
-					<label for="form" >Segundo Apellido</label>
+					<label for="form" ><b>Segundo Apellido</b></label>
 					<p>{{contacto.apellido2}}</p>
 				</div>
 
 				<div class="form">
-					<label for="form" >DNI</label>
+					<label for="form" ><b>DNI</b></label>
 					<p>{{contacto.dni}}</p>
 				</div>
-
+				<!--
 				<div class="form">
 					<label for="form" >Fecha de Nacimiento</label>
 					<p>{{ "2016-01-05T09:05:05.035Z" | date }}</p>
 				</div>
+				-->
 			</div>
 
 			<div class="form">
@@ -134,9 +135,9 @@
 							</tbody>
 					</table>
 			</div>
-			<div>
-					<a href="/contactos/"> <button type="button" class="btn btn-primary btn-lg">Volver</button></a>
-					<a href="/addcontacto/#formulariox"><button type="button" class="btn btn-primary btn-lg">Editar</button></a>
+			<div style="padding-top: 2em">
+					<a href="/contactos/listadox"> <button type="button" class="btn btn-primary btn-lg">Volver</button></a>
+					<a href="/contactos/listadox"><button type="button" class="btn btn-primary btn-lg">Editar</button></a>
 			</div>
 		</div>
 </section>
